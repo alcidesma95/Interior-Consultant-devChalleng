@@ -10,44 +10,58 @@
   font-family: lora;
   src: url(assets/fonts/Lora.ttf);
 }
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:montserrat, system-ui, -apple-system, sans-serif;
+  font-family: montserrat, system-ui,
+    -apple-system, sans-serif;
 }
-body{
- background: #181719;
+body {
+  background: #181719;
   color: white;
   padding: 30px;
 }
-a{
+a {
   text-decoration: none;
   text-decoration: underline;
   color: white;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-
-.navigation{
+.navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.navigation h1{
+.navigation h1 {
+    text-align: center;
   font-size: 14px;
-  width: 90px;
-  display: none;
+  width: 150px;
   padding: 5px;
   text-transform: uppercase;
-  border:1px solid white ;
+  border: 1px solid white;
 }
-.nav-open{
+.open-button, .close-button {
+  background-color: #181719;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+.nav-open {
   display: flex;
+}
+
+.link-icon{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
 }
 .navigation ul {
   background-color: #181719;
@@ -63,40 +77,50 @@ a{
   z-index: 500;
 }
 
-.close-button{
-  z-index: 600;
+.close-button {
   position: absolute;
   right: 20px;
   top: 20px;
+  z-index: 600;
 }
-.nav-item{
+.nav-item {
   padding-bottom: 5px;
 }
 .active {
   border-bottom: white 1px solid;
 }
-.container{
-
+.container {
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
 
-aside{
-  margin-top: 10px;
+aside {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  gap:20px;
-  width: 250px;
+  gap: 20px;
+}
+.menu-in{
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
 }
 
+.menu-off{
+    animation-name: fadeOff;
+    animation-duration: 0.3s;
+}
 aside h2 {
   font-family: lora;
   font-size: 36px;
   font-weight: 700;
+  width: 100%;
+}
+aside p {
+  width: 65%;
 }
 
-section{
+section {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -107,9 +131,7 @@ section{
   z-index: 100;
 }
 
-
 .creator-card {
-  
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -123,7 +145,7 @@ section{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   z-index: 200;
 }
-.identity{
+.identity {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -133,20 +155,23 @@ section{
   width: 40px;
   border-radius: 50%;
 }
-.creator{
+.creator {
   font-size: 12px;
 }
-.role{
+.role {
   font-size: 10px;
   color: #828282;
 }
-.card-text{
+.card-text {
   font-family: lora;
   font-size: 18px;
   font-weight: 700;
 }
+footer {
+  text-align: center;
+}
 
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .navigation ul {
     position: unset;
     display: flex;
@@ -164,59 +189,79 @@ section{
   .btn {
     display: none;
   }
-  
-  .container{
+
+  .container {
     margin-top: 20px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  aside{
+  aside {
     align-self: center;
     margin-top: -50px;
     width: 40%;
   }
 
-  aside h2{
+  aside h2 {
     font-size: 48px;
   }
 
-  section{
+  section {
     align-self: center;
     width: 60%;
   }
-  .creator-card{
+  .creator-card {
     width: 45%;
     top: -50px;
     left: 200px;
   }
 
-  .creator{
+  .creator {
     font-size: 14px;
   }
-  .role{
+  .role {
     font-size: 12px;
   }
-  .card-text{
+  .card-text {
     font-size: 24px;
   }
-  section img{
+  section img {
     width: 85%;
   }
 }
 
-@media screen and (max-width:1000px){
-  .creator{
+@media screen and (max-width: 1000px) {
+  .creator {
     font-size: 12px;
   }
-  .role{
+  .role {
     font-size: 10px;
   }
-  .card-text{
+  .card-text {
     font-size: 18px;
   }
-  .creator-card{
+  .creator-card {
     left: 25%;
   }
 }
+
+
+ 
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+       }
+       100% {
+         opacity: 1;
+       }
+  }
+  @keyframes fadeOff {
+    0% {
+        opacity: 1;
+       }
+       100% {
+         opacity: 0;
+       }
+  }
+  
